@@ -1,12 +1,12 @@
 import { Tabs } from "expo-router";
 import React from "react";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Image, Text, View } from "react-native";
-import images from "@/constants/images";
+import { Text, View } from "react-native";
 import { Colors } from "@/constants/Colors";
+import icons from "@/constants/icons";
 
 const TabIcon = ({
-  icon,
+  icon: Icon,
   color,
   name,
   focused,
@@ -18,7 +18,10 @@ const TabIcon = ({
 }) => {
   return (
     <View className="items-center justify-center gap-2">
-      <Image source={icon} className="w-6 h-6" tintColor={color} />
+      <Icon
+        color={"#A1A3A8"}
+        fill={focused ? Colors.light.brand : Colors.light.neutral}
+      />
       <Text
         className={`${
           focused ? "font-ISans_Medium" : "font-ISans_Regular"
@@ -34,6 +37,9 @@ const TabIcon = ({
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
+  const { DashboardSquareSolid, UserSolid, StoreSolid, ShoppingBagSolid } =
+    icons;
+
   return (
     <Tabs
       screenOptions={{
@@ -45,7 +51,7 @@ export default function TabLayout() {
           backgroundColor: "#fff",
           borderTopWidth: 1,
           borderTopColor: "#f3f4f6",
-          height: 84,
+          height: 72,
         },
       }}
     >
@@ -57,7 +63,7 @@ export default function TabLayout() {
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
-              icon={images.userFill}
+              icon={UserSolid}
               color={color}
               name="حساب کاربری"
               focused={focused}
@@ -73,7 +79,7 @@ export default function TabLayout() {
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
-              icon={images.shoppingCartFill}
+              icon={ShoppingBagSolid}
               color={color}
               name="سبد خرید"
               focused={focused}
@@ -89,7 +95,7 @@ export default function TabLayout() {
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
-              icon={images.menuSquareFill}
+              icon={DashboardSquareSolid}
               color={color}
               name="دسته‌بندی"
               focused={focused}
@@ -105,7 +111,7 @@ export default function TabLayout() {
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
-              icon={images.storeFill}
+              icon={StoreSolid}
               color={color}
               name="فروشگاه"
               focused={focused}
