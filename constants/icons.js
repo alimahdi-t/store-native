@@ -16,6 +16,12 @@ import StoreSolid from "../assets/icon/svg/store-01.svg";
 import Store from "../assets/icon/svg/store-03-stroke-rounded.svg";
 import ShoppingBagSolid from "../assets/icon/svg/shopping-bag-02.svg";
 import ShoppingBag from "../assets/icon/svg/shopping-bag-02-stroke-rounded.svg";
+import SettingsSolid from "../assets/icon/svg/settings-01.svg";
+import Settings from "../assets/icon/svg/settings-01-stroke-rounded.svg";
+import CustomerSupport from "../assets/icon/svg/customer-support-stroke-rounded.svg";
+import Notification from "../assets/icon/svg/notification-01-stroke-rounded.svg";
+import ClubPoint from "../assets/icon/svg/club-point.svg";
+import ProfileWallet from "../assets/icon/svg/profile-wallet.svg";
 
 export default {
   Edit,
@@ -36,4 +42,10 @@ export default {
   Store,
   ShoppingBag,
   ShoppingBagSolid,
+  SettingsSolid,
+  Settings,
+  CustomerSupport,
+  Notification,
+  ClubPoint,
+  ProfileWallet,
 };

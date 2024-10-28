@@ -13,6 +13,10 @@ module.exports = {
         ISans_Bold: ["ISans_Bold", "sans-serif"],
         ISans_Black: ["ISans_Black", "sans-serif"],
       },
+      colors: {
+        brand: "#EF4056",
+        secondary: "#19BFD3",
+      },
     },
   },
   plugins: [],

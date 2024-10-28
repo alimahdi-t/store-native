@@ -4,7 +4,6 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableNativeFeedback,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -12,6 +11,7 @@ import { convertToPersianNumbers } from "@/utils";
 import { Colors } from "@/constants/Colors";
 import { EditIcon } from "@/constants/myIcons";
 import icons from "@/constants/icons";
+import NavigationLink from "@/components/shared/NavigationLink";
 
 const Profile = () => {
   const {
@@ -25,6 +25,12 @@ const Profile = () => {
     GiftCard,
     User,
     Comment,
+    SettingsSolid,
+    Settings,
+    CustomerSupport,
+    Notification,
+    ProfileWallet,
+    ClubPoint,
   } = icons;
 
   const orderStatus = [
@@ -44,27 +50,74 @@ const Profile = () => {
 
   return (
     <SafeAreaView>
-      <ScrollView>
-        <View className="mt-20">
-          <TouchableNativeFeedback>
-            <View style={styles.userDetailInfo}>
-              <View>
-                <Text className="font-ISans_Medium">سید علی مهدی</Text>
-                <Text style={styles.number}>
-                  {convertToPersianNumbers("09030579074")}
-                </Text>
-              </View>
-              <EditIcon
-                styles={styles.editInfoStyle}
-                color={Colors.light.secondary}
-              />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/* Header */}
+
+        <View className="bg-white">
+          <View className="flex-row-reverse px-4 mt-4 justify-between items-center">
+            <TouchableOpacity>
+              <Settings width={24} height={24} color={"#000"} />
+            </TouchableOpacity>
+            <View className="flex-row-reverse gap-2">
+              <TouchableOpacity>
+                <CustomerSupport width={24} height={24} />
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Notification width={24} height={24} />
+              </TouchableOpacity>
             </View>
-          </TouchableNativeFeedback>
+          </View>
+          <View className="mt-8">
+            <TouchableOpacity>
+              <View style={styles.userDetailInfo}>
+                <View>
+                  <Text className="font-ISans_Medium">سید علی مهدی</Text>
+                  <Text style={styles.number}>
+                    {convertToPersianNumbers("09030579074")}
+                  </Text>
+                </View>
+                <EditIcon
+                  styles={styles.editInfoStyle}
+                  color={Colors.light.secondary}
+                />
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View className="flex-row-reverse items-center justify-between px-4 mt-6 mb-8">
+            <View className="flex-row-reverse items-center gap-2">
+              <ClubPoint width={60} height={60} />
+              <View className="justify-center gap-1">
+                <Text className="text-xs font-ISans_Regular text-neutral-500">
+                  <Text className="text-neutral-900">
+                    {convertToPersianNumbers(1350)}
+                  </Text>{" "}
+                  امتیاز
+                </Text>
+                <NavigationLink label={"لیست ماموریت ها"} href={""} />
+              </View>
+            </View>
+
+            <View className="flex-row-reverse items-center gap-2">
+              <ProfileWallet width={60} height={60} />
+              <View className="justify-center gap-1">
+                <Text className="text-xs font-ISans_Regular text-neutral-500">
+                  <Text className="text-neutral-900">
+                    {convertToPersianNumbers("37,500,000")}
+                  </Text>{" "}
+                  تومان
+                </Text>
+                <NavigationLink label={"مدیریت کیف پول"} href={""} />
+              </View>
+            </View>
+          </View>
         </View>
-        <View className="bg-white py-8 mt-4 items-center">
-          <View className="w-full bg-yellow-500 flex-row-reverse justify-between items-center px-4">
+
+        {/* Body*/}
+
+        <View className="bg-white py-8 mt-2 items-center">
+          <View className="w-full flex-row-reverse justify-between items-center px-4">
             <Text className="font-ISans_Medium">سفارش‌های من</Text>
-            <Text>مشاهده همه</Text>
+            <NavigationLink label={"مشاهده همه"} href={""} />
           </View>
 
           <FlatList
@@ -89,9 +142,6 @@ const Profile = () => {
                 paddingHorizontal: 16,
                 height: 168,
                 borderRadius: 24,
-                shadowColor: "#000",
-                shadowRadius: 3,
-                shadowOffset: { width: 0 },
               }}
             >
               <Text>Hey</Text>
