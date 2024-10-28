@@ -3,6 +3,7 @@ import React from "react";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Image, Text, View } from "react-native";
 import images from "@/constants/images";
+import { Colors } from "@/constants/Colors";
 
 const TabIcon = ({
   icon,
@@ -38,8 +39,8 @@ export default function TabLayout() {
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
-        tabBarActiveTintColor: "#333",
-        tabBarInactiveTintColor: "#94a3b8",
+        tabBarActiveTintColor: Colors.light.brand,
+        tabBarInactiveTintColor: Colors.light.neutral,
         tabBarStyle: {
           backgroundColor: "#fff",
           borderTopWidth: 1,
@@ -58,7 +59,7 @@ export default function TabLayout() {
             <TabIcon
               icon={images.userFill}
               color={color}
-              name="پروفایل"
+              name="حساب کاربری"
               focused={focused}
             />
           ),
