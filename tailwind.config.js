@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         brand: "#EF4056",
         secondary: "#19BFD3",
+        icons: "#424750",
       },
     },
   },

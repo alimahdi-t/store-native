@@ -25,7 +25,6 @@ const Profile = () => {
     GiftCard,
     User,
     Comment,
-    SettingsSolid,
     Settings,
     CustomerSupport,
     Notification,
@@ -56,14 +55,22 @@ const Profile = () => {
         <View className="bg-white">
           <View className="flex-row-reverse px-4 mt-4 justify-between items-center">
             <TouchableOpacity>
-              <Settings width={24} height={24} color={"#000"} />
+              <Settings width={24} height={24} color={Colors.light.icons} />
             </TouchableOpacity>
-            <View className="flex-row-reverse gap-2">
+            <View className="flex-row-reverse gap-4">
               <TouchableOpacity>
-                <CustomerSupport width={24} height={24} />
+                <CustomerSupport
+                  width={24}
+                  height={24}
+                  color={Colors.light.icons}
+                />
               </TouchableOpacity>
               <TouchableOpacity>
-                <Notification width={24} height={24} />
+                <Notification
+                  width={24}
+                  height={24}
+                  color={Colors.light.icons}
+                />
               </TouchableOpacity>
             </View>
           </View>
@@ -129,35 +136,49 @@ const Profile = () => {
             renderItem={({ item }) => (
               <View style={styles.itemContainer}>
                 <item.component width={72} height={72} />
-                <Text style={styles.text}>{item.label}</Text>
+                <Text className="font-ISans_Regular text-xs text-neutral-500">
+                  {item.label}
+                </Text>
               </View>
             )}
           />
 
-          <View style={{ paddingHorizontal: 16, width: "100%" }}>
-            <View
-              style={{
-                backgroundColor: "#ee00ee",
-                width: "100%",
-                paddingHorizontal: 16,
-                height: 168,
-                borderRadius: 24,
-              }}
-            >
-              <Text>Hey</Text>
-            </View>
-          </View>
+          {/* Banner*/}
+
+          {/*<View*/}
+          {/*  style={{ paddingHorizontal: 16, width: "100%", paddingTop: 48 }}*/}
+          {/*>*/}
+          {/*  <View*/}
+          {/*    style={{*/}
+          {/*      backgroundColor: "#ee00ee",*/}
+          {/*      width: "100%",*/}
+          {/*      paddingHorizontal: 16,*/}
+          {/*      height: 168,*/}
+          {/*      borderRadius: 24,*/}
+          {/*    }}*/}
+          {/*  >*/}
+          {/*    <Text>Hey</Text>*/}
+          {/*  </View>*/}
+          {/*</View>*/}
 
           <View className="mt-8 w-full">
             {userOptionList.map((item, index) => (
               <TouchableOpacity key={index}>
                 <View className="w-full px-4 flex-row-reverse justify-between  items-center  gap-3">
-                  <item.icon width={20} height={20} />
+                  <item.icon
+                    width={20}
+                    height={20}
+                    color={Colors.light.icons}
+                  />
                   <View className="flex-1 flex-row-reverse items-center justify-between py-6 border-b border-gray-100 gap-3">
                     <Text className="font-ISans_Regular leading-7 text-sm">
                       {item.label}
                     </Text>
-                    <ArrowLeft width={16} height={16} />
+                    <ArrowLeft
+                      width={16}
+                      height={16}
+                      color={Colors.light.icons}
+                    />
                   </View>
                 </View>
               </TouchableOpacity>
@@ -182,10 +203,6 @@ const styles = StyleSheet.create({
   itemContainer: {
     alignItems: "center",
     gap: 8,
-  },
-  text: {
-    fontSize: 12,
-    fontFamily: "ISans_Regular",
   },
 
   userDetailInfo: {
