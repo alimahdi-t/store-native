@@ -22,8 +22,22 @@ import CustomerSupport from "../assets/icon/svg/customer-support-stroke-rounded.
 import Notification from "../assets/icon/svg/notification-01-stroke-rounded.svg";
 import ClubPoint from "../assets/icon/svg/club-point.svg";
 import ProfileWallet from "../assets/icon/svg/profile-wallet.svg";
+import HelpSquare from "../assets/icon/svg/help-square-stroke-rounded.svg";
+import Bug from "../assets/icon/svg/bug-02-stroke-rounded.svg";
+import Logout from "../assets/icon/svg/logout-03-stroke-rounded.svg";
+import Task from "../assets/icon/svg/task-01-stroke-rounded.svg";
+import Call from "../assets/icon/svg/call-02-stroke-rounded.svg";
+import DocumentValidation from "../assets/icon/svg/document-validation-stroke-rounded.svg";
+import Cancel from "../assets/icon/svg/cancel-01-stroke-rounded.svg";
 
 export default {
+  Cancel,
+  DocumentValidation,
+  Call,
+  Task,
+  Logout,
+  HelpSquare,
+  Bug,
   Edit,
   StatusDelivered,
   StatusCanceled,

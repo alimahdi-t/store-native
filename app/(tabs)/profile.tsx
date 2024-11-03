@@ -12,6 +12,7 @@ import { Colors } from "@/constants/Colors";
 import { EditIcon } from "@/constants/myIcons";
 import icons from "@/constants/icons";
 import NavigationLink from "@/components/shared/NavigationLink";
+import { router } from "expo-router";
 
 const Profile = () => {
   const {
@@ -54,7 +55,10 @@ const Profile = () => {
 
         <View className="bg-white">
           <View className="flex-row-reverse px-4 mt-4 justify-between items-center">
-            <TouchableOpacity>
+            <TouchableOpacity
+              //@ts-ignore
+              onPress={() => router.push({ pathname: "/settings" })}
+            >
               <Settings width={24} height={24} color={Colors.light.icons} />
             </TouchableOpacity>
             <View className="flex-row-reverse gap-4">
@@ -170,14 +174,22 @@ const Profile = () => {
                     height={20}
                     color={Colors.light.icons}
                   />
-                  <View className="flex-1 flex-row-reverse items-center justify-between py-6 border-b border-gray-100 gap-3">
-                    <Text className="font-ISans_Regular leading-7 text-sm">
+                  <View
+                    className={`flex-1 flex-row-reverse items-center justify-between py-6 ${
+                      index < userOptionList.length - 1 ? "border-b" : ""
+                    }  border-gray-100 gap-3`}
+                  >
+                    <Text
+                      className={`font-ISans_Regular leading-7 text-sm ${
+                        index === userOptionList.length - 1
+                      }`}
+                    >
                       {item.label}
                     </Text>
                     <ArrowLeft
                       width={16}
                       height={16}
-                      color={Colors.light.icons}
+                      stroke={Colors.light.icons}
                     />
                   </View>
                 </View>
