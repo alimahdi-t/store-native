@@ -138,7 +138,7 @@ const Profile = () => {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.contentContainer}
             renderItem={({ item }) => (
-              <View style={styles.itemContainer}>
+              <View className="items-center gap-2">
                 <item.component width={72} height={72} />
                 <Text className="font-ISans_Regular text-xs text-neutral-500">
                   {item.label}
@@ -211,10 +211,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginTop: 16,
     justifyContent: "space-between",
-  },
-  itemContainer: {
-    alignItems: "center",
-    gap: 8,
   },
 
   userDetailInfo: {

@@ -29,8 +29,10 @@ import Task from "../assets/icon/svg/task-01-stroke-rounded.svg";
 import Call from "../assets/icon/svg/call-02-stroke-rounded.svg";
 import DocumentValidation from "../assets/icon/svg/document-validation-stroke-rounded.svg";
 import Cancel from "../assets/icon/svg/cancel-01-stroke-rounded.svg";
+import Toman from "../assets/icon/svg/toman.svg";
 
 export default {
+  Toman,
   Cancel,
   DocumentValidation,
   Call,
