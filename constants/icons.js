@@ -30,8 +30,12 @@ import Call from "../assets/icon/svg/call-02-stroke-rounded.svg";
 import DocumentValidation from "../assets/icon/svg/document-validation-stroke-rounded.svg";
 import Cancel from "../assets/icon/svg/cancel-01-stroke-rounded.svg";
 import Toman from "../assets/icon/svg/toman.svg";
+import Plus from "../assets/icon/svg/plus-sign-stroke-rounded.svg";
+import Delete from "../assets/icon/svg/delete-02-stroke-rounded.svg";
 
 export default {
+  Delete,
+  Plus,
   Toman,
   Cancel,
   DocumentValidation,

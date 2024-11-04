@@ -1,13 +1,8 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import { Colors } from "@/constants/Colors";
-import PriceText from "@/components/PriceText";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import PriceText from "@/components/shared/PriceText";
+import CustomButton from "@/components/shared/CustomButton";
+import ShoppingNumber from "@/components/ShoppingCart/ShoppingNumber";
 
 const ShoppingCart = () => {
   return (
@@ -16,6 +11,9 @@ const ShoppingCart = () => {
         <ScrollView>
           <View>
             <Text>ShoppingCart</Text>
+          </View>
+          <View className="w-full justify-center items-center mt-12">
+            <ShoppingNumber max={3} />
           </View>
         </ScrollView>
         <View
@@ -30,18 +28,15 @@ const ShoppingCart = () => {
             shadowRadius: 4.65,
             elevation: 6,
           }}
-          className="border-t-2  shadow-2xl border-gray-700 px-4 py-4 w-full flex-row-reverse items-center justify-between"
+          className="bg-white shadow-2xl border-gray-700 px-4 py-4 w-full flex-row-reverse items-center justify-between absolute bottom-0"
         >
-          <TouchableOpacity>
-            <View style={styles.btnContinue}>
-              <Text style={styles.btnContinueText}>ادامه فرایند خرید</Text>
-            </View>
-          </TouchableOpacity>
-          <View className="">
+          <CustomButton label={"ادامه فرایند خرید"} />
+
+          <View style={styles.sumPriceContainer}>
             <Text className="font-ISans_Regular text-xs text-neutral-500">
               جمع سبد خرید
             </Text>
-            <PriceText price={1200000} />
+            <PriceText price={120000000000} />
           </View>
         </View>
       </View>
@@ -52,16 +47,9 @@ const ShoppingCart = () => {
 export default ShoppingCart;
 
 const styles = StyleSheet.create({
-  btnContinue: {
-    backgroundColor: Colors.light.brand,
-    paddingHorizontal: 28,
-    paddingVertical: 12,
-    borderRadius: 16,
-  },
-
-  btnContinueText: {
-    fontFamily: "ISans_Regular",
-    fontSize: 12,
-    color: "white",
+  sumPriceContainer: {
+    justifyContent: "center",
+    alignItems: "flex-start",
+    gap: 2,
   },
 });
