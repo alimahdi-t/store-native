@@ -17,7 +17,7 @@ const PriceText = ({
   price,
   size = "text-sm",
   discountPercentage = 0,
-  quantity,
+  quantity = 1,
   ...props
 }: Props) => {
   const { Toman } = Icons;
@@ -28,7 +28,7 @@ const PriceText = ({
         <View style={styles.priceTextContainer}>
           <Text className={`leading-7 font-ISans_Medium color-brand text-xs`}>
             {` ${convertToPersianAndFormat(
-              calculateDiscount(price, discountPercentage),
+              calculateDiscount(price, discountPercentage) * quantity,
             )} تومان تخفیف`}
           </Text>
         </View>
@@ -36,7 +36,7 @@ const PriceText = ({
       <View style={styles.priceTextContainer}>
         <Text className={`leading-7 font-ISans_Bold ${size}`}>
           {convertToPersianAndFormat(
-            calculatePriceAfterDiscount(price, discountPercentage),
+            calculatePriceAfterDiscount(price, discountPercentage) * quantity,
           )}
         </Text>
         <Toman width={18} height={18} />
