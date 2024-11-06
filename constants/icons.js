@@ -32,8 +32,10 @@ import Cancel from "../assets/icon/svg/cancel-01-stroke-rounded.svg";
 import Toman from "../assets/icon/svg/toman.svg";
 import Plus from "../assets/icon/svg/plus-sign-stroke-rounded.svg";
 import Delete from "../assets/icon/svg/delete-02-stroke-rounded.svg";
+import Minus from "../assets/icon/svg/remove-01-stroke-rounded.svg";
 
 export default {
+  Minus,
   Delete,
   Plus,
   Toman,

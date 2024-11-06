@@ -1,21 +1,22 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import PriceText from "@/components/shared/PriceText";
 import CustomButton from "@/components/shared/CustomButton";
-import ShoppingNumber from "@/components/ShoppingCart/ShoppingNumber";
+import ShoppingList from "@/components/ShoppingCart/ShoppingList";
 
 const ShoppingCart = () => {
   return (
     <SafeAreaView>
       <View className="w-full h-full bg-white">
-        <ScrollView>
-          <View>
-            <Text>ShoppingCart</Text>
-          </View>
-          <View className="w-full justify-center items-center mt-12">
-            <ShoppingNumber max={3} />
-          </View>
-        </ScrollView>
+        {/*<ScrollView>*/}
+        {/*  <View>*/}
+        {/*    <Text>ShoppingCart</Text>*/}
+        {/*  </View>*/}
+        {/*  <View className="w-full justify-center items-center mt-12">*/}
+        {/*    <QuantitySelector max={3} />*/}
+        {/*  </View>*/}
+        {/*</ScrollView>*/}
+        <ShoppingList />
         <View
           style={{
             backgroundColor: "white",
