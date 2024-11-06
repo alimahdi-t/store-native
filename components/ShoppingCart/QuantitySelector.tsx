@@ -9,7 +9,6 @@ interface Props {
   max: number;
   quantity: number;
   setQuantity: (quantity: number) => void;
-  discountPercentage: number;
 }
 
 const QuantitySelector = ({ max, quantity, setQuantity, ...props }: Props) => {

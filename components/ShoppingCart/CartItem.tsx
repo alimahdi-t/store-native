@@ -29,7 +29,7 @@ const CartItem = ({ ...props }: {}) => {
           setQuantity={setQuantity}
         />
         <View>
-          <PriceText price={80000 * quantity} size={"text-base"} />
+          <PriceText price={80000} quantity={quantity} size={"text-base"} />
         </View>
       </View>
       <View className="flex-1 flex-row-reverse justify-end mt-1.5">

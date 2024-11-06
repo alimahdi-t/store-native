@@ -1,22 +1,46 @@
 import { StyleSheet, Text, View } from "react-native";
 import Icons from "@/constants/icons";
-import { convertToPersianAndFormat } from "@/utils";
+import {
+  calculateDiscount,
+  calculatePriceAfterDiscount,
+  convertToPersianAndFormat,
+} from "@/utils";
+
+interface Props {
+  price: number;
+  size?: "text-lg" | "text-base" | "text-sm" | "text-xs";
+  discountPercentage?: number;
+  quantity?: number;
+}
 
 const PriceText = ({
   price,
   size = "text-sm",
+  discountPercentage = 0,
+  quantity,
   ...props
-}: {
-  price: number;
-  size?: "text-lg" | "text-base" | "text-sm" | "text-xs";
-}) => {
+}: Props) => {
   const { Toman } = Icons;
+
   return (
-    <View style={styles.priceTextContainer} {...props}>
-      <Text className={`leading-7 font-ISans_Bold ${size}`}>
-        {convertToPersianAndFormat(price)}
-      </Text>
-      <Toman width={18} height={18} />
+    <View {...props}>
+      {discountPercentage !== 0 && (
+        <View style={styles.priceTextContainer}>
+          <Text className={`leading-7 font-ISans_Medium color-brand text-xs`}>
+            {` ${convertToPersianAndFormat(
+              calculateDiscount(price, discountPercentage),
+            )} تومان تخفیف`}
+          </Text>
+        </View>
+      )}
+      <View style={styles.priceTextContainer}>
+        <Text className={`leading-7 font-ISans_Bold ${size}`}>
+          {convertToPersianAndFormat(
+            calculatePriceAfterDiscount(price, discountPercentage),
+          )}
+        </Text>
+        <Toman width={18} height={18} />
+      </View>
     </View>
   );
 };

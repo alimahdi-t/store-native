@@ -19,3 +19,31 @@ export function convertToPersianAndFormat(number: string | number) {
 
   return persianNumber;
 }
+
+export function calculatePriceAfterDiscount(
+  price: number,
+  discount: number,
+  discountType: "percentage" | "fixed" = "percentage",
+) {
+  if (discountType === "percentage") {
+    return price - (price * discount) / 100;
+  } else if (discountType === "fixed") {
+    return price - discount;
+  } else {
+    throw new Error("Invalid discount type");
+  }
+}
+
+export function calculateDiscount(
+  price: number,
+  discount: number,
+  discountType: "percentage" | "fixed" = "percentage",
+) {
+  if (discountType === "percentage") {
+    return (price * discount) / 100;
+  } else if (discountType === "fixed") {
+    return discount;
+  } else {
+    throw new Error("Invalid discount type");
+  }
+}
