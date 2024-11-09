@@ -34,8 +34,18 @@ import Plus from "../assets/icon/svg/plus-sign-stroke-rounded.svg";
 import Delete from "../assets/icon/svg/delete-02-stroke-rounded.svg";
 import Minus from "../assets/icon/svg/remove-01-stroke-rounded.svg";
 import InformationCircle from "../assets/icon/svg/information-circle-stroke-rounded.svg";
+import ArrowRight from "../assets/icon/svg/arrow-right-02-stroke.svg";
+import LocationAdd from "../assets/icon/svg/location-add-01-stroke-rounded.svg";
+import Location from "../assets/icon/svg/location-03-stroke-rounded.svg";
+import MoreVertical from "../assets/icon/svg/more-vertical-stroke-rounded.svg";
+import MapsLocation from "../assets/icon/svg/maps-location-01-stroke-rounded.svg";
 
 export default {
+  Location,
+  LocationAdd,
+  MoreVertical,
+  MapsLocation,
+  ArrowRight,
   InformationCircle,
   Minus,
   Delete,

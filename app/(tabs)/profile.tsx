@@ -41,11 +41,15 @@ const Profile = () => {
   ];
 
   const userOptionList = [
-    { label: "لیست‌های من", href: "", icon: Favorite },
-    { label: "دیدگاه ها", href: "", icon: Comment },
-    { label: "آدرس‌ها", href: "", icon: Direction },
-    { label: "کارت‌های هدیه", href: "", icon: GiftCard },
-    { label: "اطلاعات حساب کاربری", href: "", icon: User },
+    { label: "لیست‌های من", href: "/(profile)address-list", icon: Favorite },
+    { label: "دیدگاه ها", href: "/(profile)address-list", icon: Comment },
+    { label: "آدرس‌ها", href: "/(profile)address-list", icon: Direction },
+    { label: "کارت‌های هدیه", href: "/(profile)address-list", icon: GiftCard },
+    {
+      label: "اطلاعات حساب کاربری",
+      href: "/(profile)address-list",
+      icon: User,
+    },
   ];
 
   return (
@@ -167,7 +171,10 @@ const Profile = () => {
 
           <View className="mt-8 w-full">
             {userOptionList.map((item, index) => (
-              <TouchableOpacity key={index}>
+              <TouchableOpacity
+                key={index}
+                onPress={() => router.push("/profile/address-list")}
+              >
                 <View className="w-full px-4 flex-row-reverse justify-between  items-center  gap-3">
                   <item.icon
                     width={20}
